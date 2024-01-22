@@ -1,0 +1,49 @@
+<mat-card class="mt-4">
+  <mat-card-header class="borda">
+    <h1 mat-card-title class="fs-3">{{ paciente.nome }}</h1>
+    <mat-card-subtitle class="fw-semibold fs-6">E-mail: {{ paciente.email }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="mt-3">
+    <h4 class="ms-auto fw-semibold text-muted">Qtd de consultas marcadas: {{ paciente.qtdConsultas }}</h4>
+
+    <h4 class="ms-auto fw-semibold text-muted">Qtd de cirurgias marcadas: {{ paciente.qtdCirurgias }}</h4>
+
+    <h4 class="ms-auto fw-semibold text-muted">Telefone: {{ paciente.telefone }}</h4>
+  </mat-card-content>
+
+  <mat-divider class="mt-3"/>
+
+  <mat-card-actions class="d-flex justify-content-between">
+    <div>
+      <button 
+        mat-icon-button 
+        color="accent"
+        matTooltip="visualizar paciente"
+        (click)="visualizar(paciente)">
+
+        <mat-icon>visibility</mat-icon>
+      </button>
+    </div>
+
+    <div>
+      <button
+        mat-icon-button 
+        color="primary"
+        matTooltip="editar paciente"
+        routerLink='/pacientes/editar/{{paciente.id}}'>
+  
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button 
+        color="primary"
+        matTooltip="excluir paciente"
+        (click)="excluir(paciente)">
+
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,68 @@
+<section class="container">
+  <mat-card class="w-50 card-estilo">
+    <mat-card-header class="d-flex justify-content-center">
+      <h1 class="fw-bold text-primary">Inserir Novo Paciente</h1>
+    </mat-card-header>
+
+    <form [formGroup]="form" (ngSubmit)="gravar()" class="espaco-forms">
+      <mat-card-content>
+        <mat-divider></mat-divider>
+          <div class="espacamento-inputs">
+            <!-- {{form.value|json}} -->
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>Nome</mat-hint>
+                <mat-label>Digite o nome do Paciente(mínimo 3 caracteres)</mat-label>
+                <input data-cy="nome" type="text" matInput formControlName="nome">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>Cpf</mat-hint>
+                <mat-label>123.456.789-00</mat-label>
+                <input data-cy="cpf" type="text" matInput mask="999.999.999-99" formControlName="cpf">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>Telefone</mat-hint>
+                <mat-label>(99)12345-1234</mat-label>
+                <input data-cy="telefone" type="text" matInput formControlName="telefone">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>E-mail</mat-hint>
+                <mat-label>exemplo@abc.com</mat-label>
+                <input data-cy="email" type="email" matInput formControlName="email">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>Data de Nascimento</mat-hint>
+                <mat-label>DD/MM/AAAA</mat-label>
+
+                <mat-datepicker #picker></mat-datepicker>
+                
+                <input data-cy="data" readonly matInput [matDatepicker]="picker" formControlName="dataNascimento">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              </mat-form-field> 
+            </div>
+          </div>
+
+          <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <mat-card-footer class="d-flex justify-content-end gap-4 p-3">
+          <button data-cy="btnGravar" mat-raised-button type="submit" color="accent" class="px-3">
+            <mat-icon class="me-2">download</mat-icon>
+            Gravar
+          </button>
+          <button mat-stroked-button type="button" color="primary" routerLink="/pacientes/listar" class="px-3">
+            <mat-icon class="me-2">keyboard_return</mat-icon>
+            Voltar
+          </button>
+        </mat-card-footer>
+      </form>
+  </mat-card>
+</section>

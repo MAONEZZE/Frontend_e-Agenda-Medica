@@ -1,0 +1,82 @@
+<section>
+  <div class="container py-3 px-3 px-md-5">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid"
+          alt="Phone image"/>
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 mt-4 mt-md-0">
+        <form [formGroup]="form" (ngSubmit)="registrar()">
+          <h1 class="fw-semibold">Registro de Usuário</h1>
+
+          <div class="form-group my-3 position-relative">
+            <mat-form-field class="w-100" appearance="outline" [floatLabel]="getFloatLabelValue()">
+              <mat-hint>Nome</mat-hint>
+              <mat-label>Digite seu nome (mínimo 3 caracteres)</mat-label>
+              <input data-cy="nome" type="text" matInput formControlName="nome">
+            </mat-form-field>
+          </div>
+
+          <div class="form-group my-3 position-relative">
+            <mat-form-field class="w-100" appearance="outline" [floatLabel]="getFloatLabelValue()">
+              <mat-hint>E-mail</mat-hint>
+              <mat-label>exemplo@abc.com</mat-label>
+              <input data-cy="email" type="email" matInput formControlName="email">
+            </mat-form-field>
+          </div>
+
+          <div class="form-group my-3 position-relative">
+            <mat-form-field class="w-100" appearance="outline" [floatLabel]="getFloatLabelValue()">
+              <mat-hint>Login</mat-hint>
+              <mat-label>Digite o nome de usuario (mínimo 3 caracteres)</mat-label>
+              <input data-cy="login" type="text" matInput formControlName="login">
+            </mat-form-field>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-group my-3 position-relative">
+            <mat-form-field class="w-100" appearance="outline" [floatLabel]="getFloatLabelValue()">
+              <mat-hint>Senha</mat-hint>
+              <mat-label>Digite a senha (mínimo 6 caracteres)</mat-label>
+              <input data-cy="senha" type="password" matInput formControlName="senha">
+            </mat-form-field>
+          </div>
+
+          <!-- Submit button -->
+          <div class="card-footer g-grid d-flex gap-2 mt-4">
+            <button 
+              data-cy="btnRegistrar"
+              mat-raised-button 
+              color="primary" 
+              class="btn btn-sm px-3" 
+              type="submit" 
+              [disabled]="desabilitado">
+
+              <span 
+              *ngIf="(estaCarregando$ | async)" 
+              class="spinner-border spinner-border-sm" 
+              role="status" aria-hidden="true"></span>
+              
+              <mat-icon *ngIf="desabilitado == false" class="me-2">system_update_alt</mat-icon>
+             
+              Registrar
+            </button>
+            <button
+              mat-raised-button 
+              color="accent"
+              routerLink="/login"
+              type="button"
+              class="px-4">
+
+              <mat-icon class="me-2">arrow_back</mat-icon>
+
+              Voltar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

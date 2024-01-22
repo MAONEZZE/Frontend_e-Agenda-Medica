@@ -1,0 +1,10 @@
+node_modules
+cypress/cucumber-json/*.*
+cypress/screenshots
+cypress/videos
+cypress/downloads
+
+# Report
+cucumber-messages.ndjson
+output
+cucumber-report.json

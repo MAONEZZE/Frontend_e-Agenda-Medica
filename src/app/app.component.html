@@ -1,0 +1,25 @@
+<app-shell *ngIf="(usuarioEstaLogado$ | async); else auth" >
+  <router-outlet></router-outlet>
+</app-shell>
+
+<ng-template #auth>
+  <mat-sidenav-container>
+
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+  
+        <a class="fs-4" mat-button disabled>
+          <mat-icon class="fs-5">home</mat-icon>
+          e-Agenda Medica
+        </a>
+  
+      </mat-toolbar>
+      
+      <main class="p-4 d-flex justify-content-center altura">
+        <router-outlet></router-outlet>
+      </main>
+  
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>
+</ng-template>

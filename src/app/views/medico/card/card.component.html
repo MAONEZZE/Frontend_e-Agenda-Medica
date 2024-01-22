@@ -1,0 +1,47 @@
+<mat-card class="mt-4">
+  <mat-card-header class="borda">
+    <h1 mat-card-title class="fs-2">{{ medico.nome }}</h1>
+    <mat-card-subtitle class="fw-semibold fs-6">Crm: {{ medico.crm }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="mt-3">
+    <h4 class="ms-auto fw-semibold text-muted">Qtd de consultas: {{ medico.qtdConsultas }}</h4>
+
+    <h4 class="ms-auto fw-semibold text-muted">Qtd de cirurgias: {{ medico.qtdCirurgias }}</h4>
+  </mat-card-content>
+
+  <mat-divider class="mt-3"/>
+
+  <mat-card-actions class="d-flex justify-content-between">
+    <div>
+      <button 
+        mat-icon-button 
+        color="accent"
+        matTooltip="visualizar medico"
+        (click)="visualizar(medico)">
+
+        <mat-icon>visibility</mat-icon>
+      </button>
+    </div>
+
+    <div>
+      <button
+        mat-icon-button 
+        color="primary"
+        matTooltip="editar medico"
+        routerLink='/medicos/editar/{{medico.id}}'>
+  
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button 
+        color="primary"
+        matTooltip="excluir medico"
+        (click)="excluir(medico)">
+
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

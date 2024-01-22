@@ -1,0 +1,54 @@
+<mat-card class="borda-estilizada">
+  <mat-card-header class="header ">
+    <h1 mat-card-title class="text-light mb-0">{{ data.registro.nome }}</h1>
+    <mat-card-subtitle class="text-light mb-2">id: {{ data.registro.id }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content class="mt-2">
+    <h3>E-mail: {{ data.registro.email }}</h3>
+    <h3>Cpf: {{ data.registro.cpf }}</h3>
+    <h3>Telefone: {{ data.registro.telefone }}</h3>
+    <h3>Nascimento: {{ data.registro.dataNascimento | date }}</h3>
+    
+    <div *ngIf="data.registro.titulosConsultas.length != 0">
+      <mat-divider class="mb-3"></mat-divider>
+      <span class="fs-6">Consultas:</span>
+
+      <mat-card *ngFor="let consulta of data.registro.titulosConsultas">
+        <mat-card-content class="mini-cards mt-2">
+          <p>Titulo: {{ consulta }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="data.registro.titulosCirurgias.length != 0">
+      <mat-divider class="mb-3"></mat-divider>
+      <span class="fs-6">Cirurgias:</span>
+
+      <mat-card *ngFor="let cirurgia of data.registro.titulosCirurgias">
+        <mat-card-content class="mini-cards mt-2">
+          <p>Titulo: {{ cirurgia }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card-content>
+
+  <mat-divider class="mt-2"></mat-divider>
+
+  <mat-card-footer>
+    <div mat-dialog-actions class="d-flex justify-content-end">
+      <button 
+        mat-stroked-button
+        color="primary"
+        mat-dialog-close 
+        class="d-flex px-2">
+        <mat-icon class="me-1">keyboard_return</mat-icon>
+        Voltar
+      </button>
+    </div>
+  </mat-card-footer>
+</mat-card>
+
+

@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-9 mx-auto mt-5">
+
+      <div class="text-md-start">
+        <h1 class="fw-bold">Listar Cirurgia</h1>
+        <hr />
+      </div>
+
+      <div class="d-grid d-md-flex gap-1">
+        <button
+          routerLink="/cirurgias/inserir"  
+          color="primary"
+          mat-raised-button>
+          <mat-icon>add</mat-icon>
+          Nova Cirurgia
+        </button>
+
+        <button 
+          color="primary"
+          mat-raised-button
+          (click)="selecionarTodas()">
+          <mat-icon>format_align_justify</mat-icon>
+          Todas
+        </button>
+
+        <button
+          color="primary"
+          mat-raised-button
+          (click)="selecionarPassadas()">
+          <mat-icon>today</mat-icon>
+          Passadas
+        </button>
+
+        <button
+          color="primary"
+          mat-raised-button
+          (click)="selecionarParaHoje()">
+          <mat-icon>event_available</mat-icon>
+          Hoje
+        </button>
+
+        <button
+          color="primary"
+          mat-raised-button
+          (click)="selecionarFuturas()">
+          <mat-icon>event</mat-icon>
+          Futuras
+        </button>
+      </div>
+
+      <div class="row g-3 ">
+        <div class="col-md-8 col-lg-4" *ngFor="let cirurgia of cirurgias$ | async">
+          <app-card 
+            (onEnviarCirurgiaVisualizacao)="visualizar($event)"
+            (onEnviarCirurgia)="excluir($event)" 
+            [cirurgia]="cirurgia">
+          </app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

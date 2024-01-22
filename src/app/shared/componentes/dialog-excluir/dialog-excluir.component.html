@@ -1,0 +1,48 @@
+<mat-card class="borda-estilizada">
+  <mat-card-header class="header">
+    <h1 mat-card-title class="text-light">Exclusão de registros</h1>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content >
+    <div class="d-flex justify-content-center mt-2">
+      <h2>Deseja excluir esse registro? </h2>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <h4>Todos os dados relacionados serão apagados</h4>
+    </div>
+
+    
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-footer>
+    <div mat-dialog-actions class="d-flex justify-content-end gap-2">
+      <button 
+        appCardHover
+        mat-raised-button
+        color="accent"
+        [mat-dialog-close]="true" 
+        cdkFocusInitial 
+        class="d-flex px-2">
+        <mat-icon class="me-1">check</mat-icon>
+        Sim
+      </button>
+
+      <button 
+        mat-stroked-button
+        color="primary"
+        mat-dialog-close 
+        class="d-flex px-2">
+        <mat-icon class="me-1">keyboard_return</mat-icon>
+        Não
+      </button>
+    </div>
+  </mat-card-footer>
+</mat-card>
+
+
+

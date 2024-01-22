@@ -1,0 +1,13 @@
+{
+    "stepDefinitions": [
+      "cypress/e2e/common/*.{js,ts}",
+      "cypress/e2e/features/[filepart]/*.{js,ts}"
+    ],
+    "html": {
+      "enabled": true,
+      "output": "output/cucumber.html"
+    },
+    "json": {
+      "enabled": true
+    }
+  }

@@ -1,0 +1,59 @@
+<mat-card class="borda-estilizada">
+  <mat-card-header class="header ">
+    <h1 mat-card-title class="text-light mb-0">{{ data.registro.titulo }}</h1>
+    <mat-card-subtitle class="text-light mb-2">id: {{ data.registro.id }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content class="mt-2">
+    <h3>Data: {{ data.registro.data }}</h3>
+    <h3>Hora Início: {{ data.registro.horaInicio }}</h3>
+    <h3>Hora Término: {{ data.registro.horaTermino }}</h3>
+
+    <div *ngIf="data.registro.pacienteAtributo != undefined || data.registro.pacienteAtributo != null">
+      <mat-divider class="mb-3"></mat-divider>
+      <span class="fs-6">Paciente:</span>
+
+      <mat-card>
+        <mat-card-content class="mini-cards mt-2">
+          <p>Nome: {{ data.registro.pacienteAtributo.nome }}</p>
+          <p>Telefone: {{ data.registro.pacienteAtributo.telefone }}</p>
+          <p>E-mail: {{ data.registro.pacienteAtributo.email }}</p>
+          <p>Qtd. Consultas: {{ data.registro.pacienteAtributo.qtdConsultas }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="data.registro.medico != undefined || data.registro.medico != null">
+      <mat-divider class="mb-3"></mat-divider>
+      <span class="fs-6">Medico:</span>
+
+      <mat-card>
+        <mat-card-content class="mini-cards mt-2">
+          <p>Nome: {{ data.registro.medico.nome }}</p>
+          <p>Crm: {{ data.registro.medico.crm }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </mat-card-content>
+
+  <mat-divider class="mt-2"></mat-divider>
+
+  <mat-card-footer>
+    <div mat-dialog-actions class="d-flex justify-content-end">
+      <button 
+        mat-stroked-button
+        color="primary"
+        mat-dialog-close 
+        class="d-flex px-2">
+        <mat-icon class="me-1">keyboard_return</mat-icon>
+        Voltar
+      </button>
+    </div>
+  </mat-card-footer>
+</mat-card>
+    
+    
+    

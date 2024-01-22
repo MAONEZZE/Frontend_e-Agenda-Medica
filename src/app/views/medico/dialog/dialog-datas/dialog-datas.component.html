@@ -1,0 +1,60 @@
+<mat-card class="borda-estilizada">
+  <mat-card-header class="header ">
+    <h1 mat-card-title class="text-light mb-2">Selecione o periodo</h1>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content class="mt-4">
+    <mat-form-field class="mat-form" appearance="outline" [floatLabel]="getFloatLabelValue()" >
+      <mat-label>Escolha o periodo</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input readonly matStartDate placeholder="Inicio" [(ngModel)]="dataI">
+        <input readonly matEndDate placeholder="Fim" [(ngModel)]="dataT">
+      </mat-date-range-input>
+      <mat-hint>dd/mm/aaaa – dd/mm/aaaa</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    
+    <mat-card class="mt-3 borda-estilizada" *ngFor="let medico of medicos; let i = index">
+      <mat-card-header class="header text-light mb-0">
+        <p class="fs-3">{{ i + 1 }}° - {{medico.nome}}</p>
+      </mat-card-header>
+
+      <mat-card-content class="mt-3">
+        <p class="fs-6">Crm: {{medico.crm}}</p>
+        <p class="fs-6">Horas Trabalhadas: {{medico.horasTotaisTrabalhadas}}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </mat-card-content>
+
+  <mat-divider class="mt-4"></mat-divider>
+
+  <mat-card-footer>
+    <div mat-dialog-actions class="d-flex justify-content-end gap-2">
+      <button 
+        appCardHover
+        mat-raised-button
+        color="accent"
+        cdkFocusInitial 
+        class="d-flex px-2"
+        (click)="enviarDatas()">
+        <mat-icon class="me-1">check</mat-icon>
+        Buscar
+      </button>
+
+      <button 
+        mat-stroked-button
+        color="primary"
+        mat-dialog-close 
+        class="d-flex px-2">
+        <mat-icon class="me-1">keyboard_return</mat-icon>
+        Voltar
+      </button>
+    </div>
+  </mat-card-footer>
+</mat-card>
+
+

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-9 mx-auto mt-5">
+
+      <div class="text-md-start">
+        <h1 class="fw-bold">Listar Pacientes</h1>
+        <hr />
+      </div>
+
+      <div class="d-grid d-md-flex gap-1">
+        <button
+          routerLink="/pacientes/inserir"  
+          color="primary"
+          mat-raised-button>
+          <mat-icon>add</mat-icon>
+          Novo Paciente
+        </button>
+      </div>
+
+      <div class="row g-3 ">
+        <div class="col-md-8 col-lg-4" *ngFor="let paciente of pacientes$ | async">
+          <app-card 
+            (onEnviarPaciente)="excluir($event)" 
+            (onEnviarPacienteVisualizacao)="visualizar($event)"
+            [paciente]="paciente">
+          </app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

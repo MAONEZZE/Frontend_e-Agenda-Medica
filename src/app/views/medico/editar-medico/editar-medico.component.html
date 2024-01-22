@@ -1,0 +1,50 @@
+<section class="container">
+  <mat-card class="w-50 card-estilo">
+    <mat-card-header class="d-flex justify-content-center">
+      <h1 class="fw-bold text-primary">Editar Medico</h1>
+    </mat-card-header>
+
+    <form [formGroup]="form" (ngSubmit)="gravar()" class="espaco-forms">
+      <mat-card-content>
+        <mat-divider></mat-divider>
+          <div class="espacamento-inputs">
+            <!-- {{form.value|json}} -->
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>Nome</mat-hint>
+                <mat-label>Digite o nome do Medico (mínimo 3 caracteres)</mat-label>
+                <input data-cy="nome" type="text" matInput formControlName="nome">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>Cpf</mat-hint>
+                <mat-label>xxx.xxx.xxx-xx</mat-label>
+                <input data-cy="cpf" type="text" matInput mask="999.999.999-99" formControlName="cpf">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-100 mb-3" appearance="outline" [floatLabel]="getFloatLabelValue()">
+                <mat-hint>Crm</mat-hint>
+                <mat-label>xxxxx-Unidade Federal (SP)</mat-label>
+                <input data-cy="crm" type="text" matInput formControlName="crm">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <mat-divider></mat-divider>
+        </mat-card-content>
+
+        <mat-card-footer class="d-flex justify-content-end gap-4 p-3">
+          <button data-cy="btnGravar" mat-raised-button type="submit" color="accent" class="px-3">
+            <mat-icon class="me-2">download</mat-icon>
+            Gravar
+          </button>
+          <button mat-stroked-button type="button" color="primary" routerLink="/medicos/listar" class="px-3">
+            <mat-icon class="me-2">keyboard_return</mat-icon>
+            Voltar
+          </button>
+        </mat-card-footer>
+      </form>
+  </mat-card>
+</section>

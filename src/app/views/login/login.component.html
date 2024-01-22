@@ -1,0 +1,100 @@
+<section class="mt-5">
+  <div class="container py-3 px-3 px-md-5">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid"/>
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <h1 class="fw-semibold cor-texto">Login de Usuário</h1>
+
+          <div class="form-group my-3 position-relative">
+            <mat-form-field 
+              class="w-100" 
+              appearance="outline" 
+              [floatLabel]="getFloatLabelValue()">
+
+              <mat-hint>Login</mat-hint>
+              <mat-label>Digite o seu nome de usuario</mat-label>
+              <input data-cy="login" type="text" matInput formControlName="login">
+            </mat-form-field>
+          </div>
+
+          <div class="form-group my-3 position-relative">
+            <mat-form-field 
+              class="w-100" 
+              appearance="outline" 
+              [floatLabel]="getFloatLabelValue()">
+
+              <mat-hint>Senha</mat-hint>
+              <mat-label>Digite a sua senha</mat-label>
+              <input data-cy="senha" type="password" matInput formControlName="senha">
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            Ainda não é um usuário?
+            <a
+              role="button"
+              class="text-primary text-decoration-none"
+              routerLink="/registro">Clique aqui e cadastre-se!</a>
+          </div>
+
+          <div class="card-footer g-grid d-flex gap-1 mt-4">
+            <button data-cy="btnEntrar" mat-raised-button color="primary" class="btn btn-sm px-3" type="submit" [disabled]="desabilitado">
+              <span 
+              *ngIf="(estaCarregando$ | async)" 
+              class="spinner-border spinner-border-sm" 
+              role="status" aria-hidden="true"></span>
+              
+              <mat-icon *ngIf="desabilitado == false" class="me-2">login</mat-icon>
+             
+              Entrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- <div class="container">
+  <mat-card class="borda-estilizada">
+    <mat-card-header class="centralizar">
+      <mat-card-title class="fs-2 cor-texto">Login</mat-card-title>
+    </mat-card-header>
+  
+    <mat-divider class="mt-2"></mat-divider>
+  
+    <mat-card-content>
+      <h1>asdasasd</h1>
+    </mat-card-content>
+  
+  </mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+  <button
+              mat-raised-button 
+              color="accent" 
+              class="col-4 btn btn-sm px-3"
+              routerLink="/registro">
+
+              Registrar
+            </button>
+</div> -->

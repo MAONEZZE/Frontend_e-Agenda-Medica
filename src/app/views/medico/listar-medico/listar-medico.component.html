@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-9 mx-auto mt-5">
+
+      <div class="text-md-start">
+        <h1 class="fw-bold">Listar Medicos</h1>
+        <hr />
+      </div>
+
+      <div class=" d-flex justify-content-between">
+        <div class="d-grid d-md-flex gap-2" >
+
+          <button
+            data-cy="btnAdd"
+            routerLink="/medicos/inserir"  
+            color="primary"
+            mat-raised-button>
+            <mat-icon>add</mat-icon>
+            Novo Medico
+          </button>
+
+          <button
+            (click)="buscarMaisTrabalhadores()"
+            color="primary"
+            mat-raised-button>
+            <mat-icon>star</mat-icon>
+            Mais Trabalhadores
+          </button>
+
+        </div>
+
+        <mat-form-field class="mat-form" appearance="outline" [floatLabel]="getFloatLabelValue()">
+          <mat-label>Pesquise por Crm!</mat-label>
+          <input type="text" [(ngModel)]="crmBusca" matInput>
+          <mat-icon (click)="buscarPorCrm()" role="button" color="primary" matSuffix>search</mat-icon>
+        </mat-form-field>
+
+      </div>
+      
+      <div class="row">
+        <div class="col-md-8 col-lg-4" *ngFor="let medico of medicos$ | async">
+          <app-card 
+            (onEnviarMedicoVisualizacao)="visualizar($event)"
+            (onEnviarMedico)="excluir($event)" 
+            [medico]="medico">
+          </app-card>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
