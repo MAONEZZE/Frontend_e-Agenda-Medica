@@ -45,7 +45,7 @@ export class AuthService{
       msgErro = 'Usuario não encontrado, verifique a senha e o email';
     }
     else{
-      msgErro = error.error.errors[0];
+      msgErro = error.error;
     }
     
     return throwError(() => new Error(msgErro))
