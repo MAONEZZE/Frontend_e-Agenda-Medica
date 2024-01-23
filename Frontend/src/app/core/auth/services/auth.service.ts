@@ -36,10 +36,13 @@ export class AuthService{
     let msgErro = '';
 
     if(error.status == 401){
-      msgErro = 'O usuário não está autorizado. Faça o o login e tente novamente.'
+      msgErro = 'O usuário não está autorizado. Faça o o login e tente novamente.';
     }
     else if(error.status == 0){
-      msgErro = 'Ocorreu um erro ao processar a requisição.'
+      msgErro = 'Ocorreu um erro ao processar a requisição.';
+    }
+    else if(error.status == 0){
+      msgErro = 'Usuario não encontrado, verifique a senha e o email';
     }
     else{
       msgErro = error.error.errors[0];
