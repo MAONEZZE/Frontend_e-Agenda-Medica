@@ -1,27 +1,42 @@
-# EAgendaMedica
+# e-AGENDA MÉDICA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+## Descrição do Projeto
 
-## Development server
+Uma clínica médica requer um sistema eficiente para gerenciar e organizar o cronograma de atividades, como consultas e cirurgias, realizadas por profissionais médicos. Neste contexto, os alunos da Academia do Programador 2023 foram contratados para desenvolver o aplicativo web "e-AGENDA MÉDICA".
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias e Ferramentas de Frontend
+- **Angular**: Framework JavaScript para construção do frontend da aplicação.
+- **Bootstrap**: Biblioteca de design e estilos para facilitar a criação de interfaces responsivas.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
+- **HTML**: Linguagem de marcação utilizada para estruturar o conteúdo da aplicação.
+- **Sass**: Linguagem para estilizar a pagina.
+- **Angular Material**: Biblioteca para auxiliar no componentes da pagina. 
 
-## Code scaffolding
+## Tecnologias e Ferramentas de Backtend
+- **C#**: Linguagem de programação principal para o desenvolvimento do backend.
+- **Entity Framework Core**: Ferramenta de mapeamento objeto-relacional (ORM) para interação com o banco de dados.
+- **SQL Server**: Sistema de gerenciamento de banco de dados relacional utilizado para armazenar dados.
+- **Visual Studio**: Ambiente no qual se foi desenvolvido o projeto do backend.
+- **.NET Core**: Framework no qual se foi desenvolvido o projeto do backend.
+- **ASP.NET**: Plataforma da Microsoft para o desenvolvimento de aplicações Web.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Cenário
 
-## Build
+Uma clínica médica é um centro onde diversas atividades médicas são realizadas diariamente. Existem dois tipos principais de atividades: "Realizar Consulta" (individual) e "Realizar Cirurgia" (individual ou em equipe).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Escopo da Solução
 
-## Running unit tests
+### Funcionalidades Principais
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Agendamento: O aplicativo permite agendar atividades em qualquer momento, seja no futuro ou passado.
+- Detalhes da Atividade: Ao criar uma atividade, é possível indicar os horários de início e término, o tipo de atividade e o médico (ou lista de médicos) responsável.
 
-## Running end-to-end tests
+### Regras de Recuperação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Cirurgia: Após realizar uma cirurgia, é necessário um período de recuperação de 4 horas.
+- Consulta: Após realizar uma consulta médica, o período de recuperação é de 20 minutos.
 
-## Further help
+### Horário de Atividades
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Os médicos têm disponibilidade para realizar atividades durante o dia inteiro, todos os dias do ano.
+
