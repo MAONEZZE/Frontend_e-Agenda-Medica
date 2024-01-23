@@ -37,7 +37,7 @@ export class LoginComponent {
     
     if(this.form.invalid){
       for(let item of this.form.validate()){
-        this.toastService.error(item);
+        this.toastService.error(item.toString(), 'Erro');
       }
       return;
     }
@@ -57,6 +57,6 @@ export class LoginComponent {
 
   processarFalha(error: Error){
     this.desabilitado = false;
-    this.toastService.error(error.message, 'Error');
+    this.toastService.error('login ou senha inválidos', 'Error');
   }
 }
