@@ -41,7 +41,7 @@ export class AuthService{
     else if(error.status == 0){
       msgErro = 'Ocorreu um erro ao processar a requisição.';
     }
-    else if(error.status == 0){
+    else if(error.status == 500){
       msgErro = 'Usuario não encontrado, verifique a senha e o email';
     }
     else{
