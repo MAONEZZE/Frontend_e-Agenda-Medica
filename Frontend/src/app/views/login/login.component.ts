@@ -57,6 +57,6 @@ export class LoginComponent {
 
   processarFalha(error: Error){
     this.desabilitado = false;
-    this.toastService.error('login ou senha inválidos', 'Error');
+    this.toastService.error(error.message, 'Error');
   }
 }
