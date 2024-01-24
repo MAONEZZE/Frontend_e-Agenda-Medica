@@ -10,6 +10,7 @@
       <div class="d-grid d-md-flex gap-1 ">
 
         <button
+          data-cy="btnAdd"
           routerLink="/consultas/inserir"  
           color="primary"
           mat-raised-button>
@@ -18,6 +19,7 @@
         </button>
 
         <button 
+          data-cy="btnFiltroTodas"
           color="primary"
           mat-raised-button
           (click)="selecionarTodas()">
@@ -26,6 +28,7 @@
         </button>
 
         <button
+          data-cy="btnFiltroPassadas"
           color="primary"
           mat-raised-button
           (click)="selecionarPassadas()">
@@ -34,6 +37,7 @@
         </button>
 
         <button
+          data-cy="btnFiltroHoje"
           color="primary"
           mat-raised-button
           (click)="selecionarParaHoje()">
@@ -42,6 +46,7 @@
         </button>
 
         <button
+          data-cy="btnFiltroFuturas"
           color="primary"
           mat-raised-button
           (click)="selecionarFuturas()">
