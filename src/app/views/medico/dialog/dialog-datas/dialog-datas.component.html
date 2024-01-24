@@ -9,8 +9,8 @@
     <mat-form-field class="mat-form" appearance="outline" [floatLabel]="getFloatLabelValue()" >
       <mat-label>Escolha o periodo</mat-label>
       <mat-date-range-input [rangePicker]="picker">
-        <input readonly matStartDate placeholder="Inicio" [(ngModel)]="dataI">
-        <input readonly matEndDate placeholder="Fim" [(ngModel)]="dataT">
+        <input data-cy="dataDialogInicio" readonly matStartDate placeholder="Inicio" [(ngModel)]="dataI">
+        <input data-cy="dataDialogFim" readonly matEndDate placeholder="Fim" [(ngModel)]="dataT">
       </mat-date-range-input>
       <mat-hint>dd/mm/aaaa – dd/mm/aaaa</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -35,6 +35,7 @@
   <mat-card-footer>
     <div mat-dialog-actions class="d-flex justify-content-end gap-2">
       <button 
+        data-cy="btnBuscar"
         appCardHover
         mat-raised-button
         color="accent"
@@ -46,6 +47,7 @@
       </button>
 
       <button 
+        data-cy="btnSairDialog"
         mat-stroked-button
         color="primary"
         mat-dialog-close 
