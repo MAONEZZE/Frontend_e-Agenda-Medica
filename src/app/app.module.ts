@@ -57,7 +57,7 @@ function logarUsuarioSalvoFactory(authService: AuthService){
     RegistrarModule,
 
     ToastrModule.forRoot({
-      timeOut:5000,
+      timeOut:3000,
       positionClass:'toast-bottom-right',
       preventDuplicates: true
     })
